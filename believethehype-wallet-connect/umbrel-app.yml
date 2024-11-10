@@ -1,5 +1,5 @@
 manifestVersion: 1
-id: believethehype-wallet-connect
+id: bth-wallet-connect
 name: NostrWalletConnect
 tagline: Connect your Node to Nostr Wallet Connect
 icon: https://files.catbox.moe/259swo.svg
