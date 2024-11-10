@@ -4,7 +4,7 @@ name: NostrWalletConnect
 tagline: Connect your Node to Nostr Wallet Connect
 icon: https://files.catbox.moe/259swo.svg
 category: Social
-version: "0.2.2"
+version: "0.2.3"
 port: 58001
 description: >-
   Connect your LND node with Nostr.
