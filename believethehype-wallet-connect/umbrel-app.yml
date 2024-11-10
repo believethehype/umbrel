@@ -1,0 +1,35 @@
+manifestVersion: 1
+id: bth-nwc
+name: NWC
+tagline: Connect your Node to Nostr Wallet Connect
+icon: https://files.catbox.moe/259swo.svg
+category: Social
+version: "0.2.0"
+port: 58001
+description: >-
+  Connect your LND node with Nostr.
+  Zap directly from within supported Nostr Apps.
+
+  This fork additionally supports LNBits Backend
+
+developer: Alby/Believethehype
+website: https://github.com/getAlby/nostr-wallet-connect
+submitter: Believethehype
+submission: https://github.com/getAlby/nostr-wallet-connect
+repo: https://github.com/believethehype/nostr-wallet-connect/tree/umbrel
+support: https://github.com/believethehype/nostr-wallet-connect/issues
+gallery:
+  - https://i.imgur.com/YHpVG2Z.png
+  - https://i.imgur.com/YFjcPPz.png
+  - https://i.imgur.com/nn1c3Lv.png
+releaseNotes: >-
+ Updated to latest Version of Albys NWC, but added LNBits support. 
+ Get Balance, create Invoice from LNBits supported
+ fixes Budgets with LNBits
+
+ -
+dependencies:
+  - lightning
+path: ""
+defaultUsername: ""
+defaultPassword: ""

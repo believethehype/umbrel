@@ -1,0 +1,26 @@
+version: "3.7"
+services:
+  app_proxy:
+    environment:
+      # The format here is: <app-id>_<docker-service-name>_1
+      APP_HOST: believethehype-wallet-connect_server_1
+      APP_PORT: 8080
+      PROXY_AUTH_ADD: "false"
+
+  server:
+    image: ghcr.io/believethehype/nostr-wallet-connect:main-dffd933
+    init: true
+    volumes:
+      - ${APP_DATA_DIR}/data:/data
+      - ${APP_LIGHTNING_NODE_DATA_DIR}:/lnd:ro
+    environment:
+      LN_BACKEND_TYPE: "LND"
+      LND_ADDRESS: $APP_LIGHTNING_NODE_IP:$APP_LIGHTNING_NODE_GRPC_PORT
+      LND_CERT_FILE: "/lnd/tls.cert"
+      LND_MACAROON_FILE: "/lnd/data/chain/bitcoin/$APP_BITCOIN_NETWORK/admin.macaroon"
+      LNBITS_UMBREL:  lnbits_web_1
+      #LNBITS_HOST:  http://${APP_LNBITS_IP}:3007
+      DATABASE_URI: "/data/nostr-wallet-connect.db"
+      COOKIE_SECRET: "666"
+    restart: on-failure
+    stop_grace_period: 1m
